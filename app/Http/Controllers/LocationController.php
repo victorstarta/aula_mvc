@@ -9,6 +9,15 @@ use App\Models\Cities;
 class LocationController extends Controller
 {
     public function index(){
-        dd(States::get());
+        $cities = Cities::get();
+        foreach($cities as $city){
+            
+            $state = $city->state()->first();
+
+            $city_and_state = $city->name . ' - ' . $state->name;
+
+            return $city_and_state;
+            
+        }
     }
 }
