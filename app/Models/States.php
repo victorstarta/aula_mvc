@@ -16,6 +16,16 @@ class States extends Model
     protected $table = 'states';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'abbreviation'
+    ];
+
+    /**
      * Get the user that owns the phone.
      */
     public function cities()

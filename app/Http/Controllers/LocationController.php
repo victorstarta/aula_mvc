@@ -20,4 +20,25 @@ class LocationController extends Controller
             
         }
     }
+
+    public function show($id){
+        $state = States::find($id);
+        return $state;
+    }
+
+    public function store(Request $request){
+
+        // Acessar UM INPUT do request return $request->input('sigla');
+
+        // jeito fácil
+        $estados = States::create($request->all());
+        return $estados;
+
+        // jeito difícil
+        // $estados = States::create([
+        //     'name' => $request->input('zezinho_name'),
+        //     'abbreviation' => $request->input('zezinho_abbreviation')
+        // ]);
+        return $estados;
+    }
 }

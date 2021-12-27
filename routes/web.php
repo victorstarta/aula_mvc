@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/location', [LocationController::class, 'index']);
+
+Route::get('/location/{id}', [LocationController::class, 'show']);
+
+Route::post('/location/save', [LocationController::class, 'store']);
