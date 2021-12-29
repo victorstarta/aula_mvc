@@ -21,7 +21,7 @@ class LocationController extends Controller
         }
     }
 
-    public function show($id){
+    public function showState($id){
         $state = States::find($id);
         return $state;
     }
@@ -40,5 +40,10 @@ class LocationController extends Controller
         //     'abbreviation' => $request->input('zezinho_abbreviation')
         // ]);
         return $estados;
+    }
+
+    public function states(){
+        $states = States::get();
+        return view('estados', ['estados' => $states]);
     }
 }

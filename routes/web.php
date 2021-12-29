@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/location', [LocationController::class, 'index']);
 
-Route::get('/location/{id}', [LocationController::class, 'show']);
+Route::get('/location/{id}', [LocationController::class, 'showState']);
 
 Route::post('/location/save', [LocationController::class, 'store']);
+
+Route::get('/estados', [LocationController::class, 'states']);
